@@ -8,7 +8,8 @@ echo -n 'Start docker service'
 service docker start
 
 export JEKYLL_VERSION=$1
-echo -n 'Running docker jekyll/jekyll:$1'
+echo -n "Running docker jekyll/jekyll:$1"
+pwd
 ls
 docker run --rm \
   --volume="$PWD:/srv/jekyll" \
