@@ -13,10 +13,6 @@ pwd
 echo " Listing"
 ls
 
-echo ${{ github.workspace }}
-cd ${{ github.workspace }}
-ls
-
 
 export JEKYLL_VERSION=$1
 echo "Running docker jekyll/jekyll:$1"

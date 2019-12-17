@@ -5,6 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Generate static site
     steps:
+    - uses: actions/checkout@v1
     - name: Building the site
       id: jekyll_build
       uses: phuang07/gh-actions@master
