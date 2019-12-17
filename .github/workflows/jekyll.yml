@@ -1,0 +1,15 @@
+on: [push]
+
+jobs:
+  jekyll_job:
+    runs-on: ubuntu-latest
+    name: Generate static site
+    steps:
+    - name: Building the site
+      id: jekyll_build
+      uses: phuang07/gh-actions@master
+      with:
+        jekyll_version: '3.8.5'
+    # Use the output from the `hello` step
+    # - name: Get the output time
+    #   run: echo "The time was ${{ steps.hello.outputs.time }}"

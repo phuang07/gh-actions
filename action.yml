@@ -1,0 +1,16 @@
+# action.yml
+name: 'Jekyll Build'
+description: 'Generate a static site using Jekyll'
+inputs:
+  jekyll_version:  # id of input
+    description: 'What the version of Jekyll for the build'
+    required: true
+    default: '4.0.0'
+outputs:
+  result: # id of output
+    description: 'Nothing for now'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.jekyll_version }}
