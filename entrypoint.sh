@@ -4,7 +4,7 @@
 # https://github.com/BryanSchuetz/jekyll-deploy-gh-pages/blob/master/entrypoint.sh
 # https://github.com/envygeeks/jekyll-docker/blob/master/README.md
 
-sudo chmod 777 docs
+chmod -R 777 docs
 cd docs
 echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
 bundle install
