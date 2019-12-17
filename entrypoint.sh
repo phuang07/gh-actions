@@ -29,7 +29,7 @@ docker run -t -d --name jekyll_container --volume "$PWD:/srv/jekyll" jekyll/jeky
 
 docker ps
 
-# docker exec jekyll_container jekyll build
+docker exec jekyll_container ls
 
 # git status
 exit 0
