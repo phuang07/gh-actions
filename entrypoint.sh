@@ -4,12 +4,13 @@
 # https://github.com/BryanSchuetz/jekyll-deploy-gh-pages/blob/master/entrypoint.sh
 # https://github.com/envygeeks/jekyll-docker/blob/master/README.md
 
+sudo chmod 777 docs
 cd docs
 echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
 bundle install
 bundle list | grep "jekyll ("
 echo '👍 BUNDLE INSTALLED—BUILDING THE SITE'
-bundle exec jekyll build
+bundle exec jekyll build --draft
 echo '👍 THE SITE IS BUILT—PUSHING IT BACK TO GITHUB-PAGES'
 cd _site
 remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" && \
