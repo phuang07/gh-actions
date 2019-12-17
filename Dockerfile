@@ -1,7 +1,6 @@
 # Container image that runs your code
 FROM alpine:3.10
-
-RUN apk update
+RUN apk add --update docker openrc
 RUN apk add docker boot
 
 
