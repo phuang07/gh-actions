@@ -4,12 +4,13 @@
 # https://github.com/BryanSchuetz/jekyll-deploy-gh-pages/blob/master/entrypoint.sh
 # https://github.com/envygeeks/jekyll-docker/blob/master/README.md
 
-echo -n 'Start docker service'
+echo "Start docker service"
 service docker start
 
 export JEKYLL_VERSION=$1
-echo -n "Running docker jekyll/jekyll:$1"
-pwd
+echo "Running docker jekyll/jekyll:$1"
+echo "Current directory: $(`pwd`)"
+
 ls
 docker run --rm \
   --volume="$PWD:/srv/jekyll" \
