@@ -21,7 +21,14 @@ echo "Running docker jekyll/jekyll:$1"
 echo $(docker run -d --rm \
     --volume="$PWD/docs:/srv/jekyll" \
     -it jekyll/jekyll:$JEKYLL_VERSION \
-    jekyll build)
+    ls )
+
+
+echo "Another docker command"
+echo $(docker run -d --rm \
+    --volume="$PWD/docs:/srv/jekyll" \
+    -it jekyll/jekyll:$JEKYLL_VERSION \
+    pwd )
 
 
 exit 0
