@@ -24,12 +24,15 @@ echo "Running docker jekyll/jekyll:$1"
 #     -it jekyll/jekyll:$JEKYLL_VERSION \
 #     ls
 
+docker run \
+-v $PWD/docs:/srv/jekyll -v $PWD/docs/_site:/srv/jekyll/_site \
+jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --draft"
 
-docker run -t -d --name jekyll_container --volume "$PWD/docs:/srv/jekyll" jekyll/jekyll:$JEKYLL_VERSION jekyll build
+# docker run -t -d --name jekyll_container --volume "$PWD/docs:/srv/jekyll" jekyll/jekyll:$JEKYLL_VERSION jekyll build
 
 docker ps
 
-ls docs/_site
+ls docs
 
 exit 0
 
