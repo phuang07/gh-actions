@@ -25,7 +25,7 @@ echo "Running docker jekyll/jekyll:$1"
 #     ls
 
 
-docker run -t --name "jekyll_container" --volume "$PWD:/srv/jekyll" jekyll/jekyll:$JEKYLL_VERSION ls
+docker run -t -d --name jekyll_container --volume "$PWD:/srv/jekyll" jekyll/jekyll:$JEKYLL_VERSION ls
 
 docker ps
 
