@@ -9,7 +9,7 @@ service docker start
 
 export JEKYLL_VERSION=$1
 echo "Running docker jekyll/jekyll:$1"
-echo "Current directory: $(`pwd`)"
+echo "Current directory: $(`sudo pwd`)"
 
 ls
 docker run --rm \
