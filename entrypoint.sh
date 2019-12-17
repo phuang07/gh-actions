@@ -18,9 +18,9 @@ export JEKYLL_VERSION=$1
 echo "Running docker jekyll/jekyll:$1"
 
 
-docker run -d --rm \
-    --name="jekyll-container"
-    --volume="$PWD/docs:/srv/jekyll" \
+docker run --rm \
+    --name "jekyll-container"
+    --volume="$PWD:/srv/jekyll" \
     -it jekyll/jekyll:$JEKYLL_VERSION \
     ls
 
