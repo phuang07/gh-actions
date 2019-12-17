@@ -7,13 +7,20 @@
 # echo "Start docker service"
 # service docker start
 
+echo "Current directory"
+pwd
+
+echo " Listing"
+ls
+
 export JEKYLL_VERSION=$1
 echo "Running docker jekyll/jekyll:$1"
 
-docker run -d --rm \
+
+echo $(docker run -d --rm \
     --volume="$PWD/docs:/srv/jekyll" \
-    -i jekyll/jekyll:$JEKYLL_VERSION \
-    jekyll build
+    -it jekyll/jekyll:$JEKYLL_VERSION \
+    jekyll build)
 
 
 exit 0
