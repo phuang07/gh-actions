@@ -9,14 +9,13 @@ service docker start
 
 export JEKYLL_VERSION=$1
 echo "Running docker jekyll/jekyll:$1"
-echo "Current directory: $(`sudo pwd`)"
 
 ls
 docker run --rm \
-  --volume="$PWD:/srv/jekyll" \
+  --volume="$PWD:docs/srv/jekyll" \
   -it jekyll/jekyll:JEKYLL_VERSION \
   ls
-  #jekyll build --draft
+  jekyll build
 
 
 exit 0
