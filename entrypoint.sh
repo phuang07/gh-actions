@@ -24,9 +24,9 @@ echo "Running docker jekyll/jekyll:$1"
 #     -it jekyll/jekyll:$JEKYLL_VERSION \
 #     ls
 
+# --volume="/github/workspace/docs/_site:/srv/jekyll/_site" \
 docker run \
 --volume="/github/workspace/docs:/srv/jekyll" \
-# --volume="/github/workspace/docs/_site:/srv/jekyll/_site" \
 jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && pwd && ls && jekyll build --draft"
 
 # docker run -t -d --name jekyll_container --volume "$PWD/docs:/srv/jekyll" jekyll/jekyll:$JEKYLL_VERSION jekyll build
