@@ -19,16 +19,16 @@ echo "Running docker jekyll/jekyll:$1"
 
 
 docker run --rm \
-    --name "jekyll_container"
+    # --name "jekyll_container"
     --volume="$PWD:/srv/jekyll" \
     -it jekyll/jekyll:$JEKYLL_VERSION \
     ls
 
 docker ps
 
-docker exec jekyll_container jekyll build
+# docker exec jekyll_container jekyll build
 
-git status
+# git status
 exit 0
 
 
