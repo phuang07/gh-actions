@@ -19,7 +19,11 @@ remote_branch="gh-pages" && \
 echo ' Create cname and robot.txt'
 echo $2 > CNAME
 
-echo -e "User-agent: * \n Disallow: /" > robots.txt
+# Disallow robots crawling if not on the producation site
+if [[ ! $2 =~ '*nyulawglobal.org*' ]]; then
+    echo -e "User-agent: * \n Disallow: /" > robots.txt
+fi
+
 
 git init && \
 git config user.name "${GITHUB_ACTOR}" && \
