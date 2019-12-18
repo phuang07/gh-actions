@@ -10,6 +10,8 @@ echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
 bundle install
 bundle list | grep "jekyll ("
 echo '👍 BUNDLE INSTALLED—BUILDING THE SITE'
+echo 'Jekyll version'
+bundle exec jekyll --version
 bundle exec jekyll build --draft
 echo '👍 THE SITE IS BUILT—PUSHING IT BACK TO GITHUB-PAGES'
 cd _site
