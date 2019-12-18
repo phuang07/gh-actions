@@ -19,7 +19,7 @@ remote_branch="gh-pages" && \
 echo ' Create cname and robot.txt'
 echo $2 > cname
 
-echo "User-agent: * \n Disallow: /" > robots.txt
+echo -e "User-agent: * \n Disallow: /" > robots.txt
 
 git init && \
 git config user.name "${GITHUB_ACTOR}" && \

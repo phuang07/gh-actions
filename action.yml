@@ -14,3 +14,4 @@ runs:
   image: 'Dockerfile'
   args:
     - ${{ inputs.jekyll_version }}
+    - ${{ inputs.cname }}
