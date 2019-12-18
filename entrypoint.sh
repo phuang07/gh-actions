@@ -17,7 +17,7 @@ remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITO
 remote_branch="gh-pages" && \
 
 echo ' Create cname and robot.txt'
-echo $2 > cname
+echo $2 > CNAME
 
 echo -e "User-agent: * \n Disallow: /" > robots.txt
 
