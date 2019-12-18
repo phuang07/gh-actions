@@ -2,7 +2,7 @@
 # FROM alpine:3.10
 # RUN apk add --update docker openrc
 # RUN rc-update add docker boot
-FROM jekyll/jekyll:3.8.5
+FROM jekyll/jekyll:4.0.0
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY entrypoint.sh /entrypoint.sh
