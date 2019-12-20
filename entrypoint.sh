@@ -5,6 +5,8 @@
 # https://github.com/envygeeks/jekyll-docker/blob/master/README.md
 docker -v
 docker-compose -v
+pwd
+ls
 docker-compose up aws
 
 exit 0
@@ -14,7 +16,7 @@ cd docs
 echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
 bundle install
 bundle list | grep "jekyll ("
-echo '👍 BUNDLE INSTALLED—BUILDING THE SITE'
+echo '👍 BUNDLE INSTALLED—BUIING THE SITE'
 echo 'Jekyll version'
 bundle exec jekyll --version
 bundle exec jekyll build --draft
