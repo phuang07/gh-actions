@@ -5,10 +5,8 @@
 # https://github.com/envygeeks/jekyll-docker/blob/master/README.md
 docker -v
 docker-compose -v
-pwd
-ls
+docker-compose up globalex
 docker-compose up aws
-
 exit 0
 
 chmod -R 777 docs
