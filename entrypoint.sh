@@ -3,8 +3,14 @@
 # Credit to:
 # https://github.com/BryanSchuetz/jekyll-deploy-gh-pages/blob/master/entrypoint.sh
 # https://github.com/envygeeks/jekyll-docker/blob/master/README.md
+
+
 docker -v
 docker-compose -v
+echo "File in the current directory"
+pwd
+ls
+
 docker-compose up globalex
 
 echo "Now sync to aws"
