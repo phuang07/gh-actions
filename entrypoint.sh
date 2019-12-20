@@ -4,35 +4,15 @@
 # https://github.com/BryanSchuetz/jekyll-deploy-gh-pages/blob/master/entrypoint.sh
 # https://github.com/envygeeks/jekyll-docker/blob/master/README.md
 
-
-docker -v
-docker-compose -v
-
-# docker-compose up globalex
-export JEKYLL_VERSION=3.8
-docker run --rm \
-  --volume="$PWD/docs:/srv/jekyll" \
-  jekyll/jekyll:$JEKYLL_VERSION \
-  jekyll build
-
-ls docs/_site
-
-
-echo "Now sync to aws"
-docker-compose up aws
-
-exit 0
-
-
 chmod -R 777 docs
 cd docs
-echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
-bundle install
-bundle list | grep "jekyll ("
-echo '👍 BUNDLE INSTALLED—BUIING THE SITE'
-echo 'Jekyll version'
-bundle exec jekyll --version
-bundle exec jekyll build --draft
+# echo '👍 ENTRYPOINT HAS STARTED—INSTALLING THE GEM BUNDLE'
+# bundle install
+# bundle list | grep "jekyll ("
+# echo '👍 BUNDLE INSTALLED—BUIING THE SITE'
+# echo 'Jekyll version'
+# bundle exec jekyll --version
+# bundle exec jekyll build --draft
 echo '👍 THE SITE IS BUILT—PUSHING IT BACK TO GITHUB-PAGES'
 cd _site
 remote_repo="https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" && \
