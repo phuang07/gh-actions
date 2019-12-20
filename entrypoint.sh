@@ -6,7 +6,12 @@
 docker -v
 docker-compose -v
 docker-compose up globalex
+
+echo "Now sync to aws"
 docker-compose up aws
+
+exit 0
+
 
 chmod -R 777 docs
 cd docs
