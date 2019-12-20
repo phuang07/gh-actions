@@ -3,6 +3,11 @@
 # Credit to:
 # https://github.com/BryanSchuetz/jekyll-deploy-gh-pages/blob/master/entrypoint.sh
 # https://github.com/envygeeks/jekyll-docker/blob/master/README.md
+docker -v
+docker-compose -v
+docker-compose up aws
+
+exit 0
 
 chmod -R 777 docs
 cd docs
