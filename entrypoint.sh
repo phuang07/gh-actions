@@ -7,15 +7,12 @@
 
 docker -v
 docker-compose -v
-echo "File in the current directory"
-pwd
-ls
 
 # docker-compose up globalex
 export JEKYLL_VERSION=3.8
 docker run --rm \
   --volume="$PWD/docs:/srv/jekyll" \
-  -it jekyll/jekyll:$JEKYLL_VERSION \
+  jekyll/jekyll:$JEKYLL_VERSION \
   jekyll build
 
 ls docs/_site
